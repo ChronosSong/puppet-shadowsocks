@@ -1,0 +1,15 @@
+[Unit]
+Description=Shadowsocks
+
+[Service]
+TimeoutStartSec=0
+
+USER=nobody
+GROUP=nogroup
+
+ExecStart=/usr/local/bin/sslocal -c /etc/<%= $shadowsocks::agent::package_name %>/config.json
+
+MAXFD=32768
+
+[Install]
+WantedBy=multi-user.target

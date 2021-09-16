@@ -1,0 +1,9 @@
+{
+    "server": "<%= $shadowsocks::agent::server_ip %>",
+    "mode": "<%= $shadowsocks::agent::mode %>",
+    "server_port": <%= $shadowsocks::agent::server_port %>,
+    "local_port": <%= $shadowsocks::agent::local_port %>,
+    "password": "<%= $shadowsocks::agent::password %>",
+    "timeout": <%= $shadowsocks::agent::timeout %>,
+    "method": "<%= $shadowsocks::agent::method %>"
+}
