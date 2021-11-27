@@ -17,4 +17,14 @@ class shadowsocks::server::config {
     require => File['shadowsocks_dir'],
     notify  => Service[$shadowsocks::server::package_name]
   }
+
+  #bbr
+  sysctl { 'net.ipv4.tcp_congestion_control':
+    ensure => present,
+    value  =>'bbr'
+  }
+  sysctl { 'net.core.default_qdisc':
+    ensure => present,
+    value  =>'fq'
+  }
 }
